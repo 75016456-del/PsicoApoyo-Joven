@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PsicoApoyo Joven</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+<header class="bg-blue-600 text-white p-5 text-center">
+  <h1 class="text-3xl font-bold">PsicoApoyo Joven</h1>
+  <p>Apoyo emocional accesible y profesional</p>
+</header>
+
+<section class="text-center p-10 bg-white" data-aos="fade-up">
+  <img src="https://images.unsplash.com/photo-1584515933487-779824d29309" class="mx-auto mb-6 rounded-2xl shadow" width="400">
+  <h2 class="text-2xl font-semibold mb-4">¿Necesitas ayuda emocional?</h2>
+  <p class="mb-6">Sesiones por videollamada a <b>S/10</b> (35 minutos)</p>
+  <button onclick="scrollToContact()" class="bg-blue-600 text-white px-6 py-2 rounded-2xl">Reservar ahora</button>
+</section>
+
+<section class="p-10 bg-gray-50" data-aos="fade-up">
+  <h2 class="text-2xl font-bold text-center mb-8">Servicios</h2>
+  <div class="grid md:grid-cols-4 gap-6">
+    <div class="p-4 shadow rounded-2xl bg-white text-center hover:scale-105 transition">
+      <img src="https://images.unsplash.com/photo-1516302752625-fcc3c50ae61f" class="mx-auto mb-3 rounded-xl" width="120">
+      <h3 class="font-bold">Manejo emocional</h3>
+    </div>
+    <div class="p-4 shadow rounded-2xl bg-white text-center hover:scale-105 transition">
+      <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c" class="mx-auto mb-3 rounded-xl" width="120">
+      <h3 class="font-bold">Creación de CV</h3>
+    </div>
+    <div class="p-4 shadow rounded-2xl bg-white text-center hover:scale-105 transition">
+      <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644" class="mx-auto mb-3 rounded-xl" width="120">
+      <h3 class="font-bold">Orientación vocacional</h3>
+    </div>
+    <div class="p-4 shadow rounded-2xl bg-white text-center hover:scale-105 transition">
+      <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773" class="mx-auto mb-3 rounded-xl" width="120">
+      <h3 class="font-bold">Consejería</h3>
+    </div>
+  </div>
+</section>
+
+<section class="p-10 text-center" data-aos="fade-up">
+  <h2 class="text-2xl font-bold mb-4">Reserva tu sesión</h2>
+
+  <!-- FORMULARIO QUE ENVÍA A GMAIL -->
+  <form action="https://formsubmit.co/TUCORREO@gmail.com" method="POST" class="max-w-md mx-auto bg-white p-6 rounded-2xl shadow">
+    <input type="text" name="nombre" placeholder="Nombre" class="w-full mb-3 p-2 border rounded" required>
+    <input type="email" name="email" placeholder="Correo" class="w-full mb-3 p-2 border rounded" required>
+    <textarea name="mensaje" placeholder="¿En qué podemos ayudarte?" class="w-full mb-3 p-2 border rounded" required></textarea>
+    <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded">Enviar</button>
+  </form>
+
+  <!-- BOTÓN GOOGLE FORMS -->
+  <div class="mt-6">
+    <a href="https://forms.gle/f2hyVVwRmHmpSvpR7" target="_blank" class="bg-purple-600 text-white px-6 py-2 rounded-2xl">
+      Reservar con formulario completo
+    </a>
+  </div>
+</section>
+
+<section id="contacto" class="p-10 bg-white text-center" data-aos="fade-up">
+  <h2 class="text-2xl font-bold mb-4">Contáctanos</h2>
+  <div class="flex justify-center gap-4 flex-wrap">
+    <a href="https://wa.me/51990042500?text=Hola%20quiero%20una%20sesión" class="bg-green-500 text-white px-6 py-2 rounded-2xl">+51 990 042 500</a>
+    <a href="https://wa.me/51929371414?text=Hola%20quiero%20una%20sesión" class="bg-green-500 text-white px-6 py-2 rounded-2xl">+51 929 371 414</a>
+  </div>
+</section>
+
+<footer class="bg-gray-800 text-white text-center p-4">
+  <p>© 2026 PsicoApoyo Joven</p>
+</footer>
+
+<script>
+  AOS.init();
+  function scrollToContact() {
+    document.getElementById('contacto').scrollIntoView({ behavior: 'smooth' });
+  }
+</script>
+
+</body>
+</html>
