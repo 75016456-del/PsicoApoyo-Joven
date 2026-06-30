@@ -1,26 +1,20 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>PsicoApoyo Joven | Orientación emocional y vocacional</title>
+<title>PsicoApoyo Joven | Orientación psicoeducativa virtual</title>
 
-<meta name="description" content="Orientación psicoeducativa virtual para jóvenes y estudiantes. Apoyo emocional, orientación vocacional y creación de CV de manera accesible y moderna.">
-
+<meta name="description" content="Orientación psicoeducativa virtual para jóvenes y estudiantes. Apoyo emocional, orientación vocacional y creación de CV de manera accesible, moderna y virtual.">
 <meta name="google-site-verification" content="kGequIksUZ8CMPG1p6c_8kat98z72g-bhl8AyTzyFg8">
 
 <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/3771/3771417.png">
 
-<script src="https://cdn.tailwindcss.com"></script>
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
-
 *{
 margin:0;
 padding:0;
@@ -31,244 +25,529 @@ scroll-behavior:smooth;
 
 body{
 background:#f8f5ff;
+color:#2f2440;
 overflow-x:hidden;
-color:#333;
+}
+
+/* NAV */
+
+nav{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+z-index:1000;
+background:rgba(255,255,255,.82);
+backdrop-filter:blur(18px);
+box-shadow:0 8px 25px rgba(0,0,0,.06);
+}
+
+.nav-box{
+max-width:1200px;
+margin:auto;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 22px;
+}
+
+.logo{
+display:flex;
+align-items:center;
+gap:10px;
+font-weight:800;
+color:#6d28d9;
+font-size:1.2rem;
+}
+
+.logo img{
+width:38px;
+}
+
+.nav-links{
+display:flex;
+gap:28px;
+}
+
+.nav-links a{
+text-decoration:none;
+color:#2f2440;
+font-weight:500;
+transition:.3s;
+}
+
+.nav-links a:hover{
+color:#7c3aed;
+}
+
+.menu-btn{
+display:none;
+font-size:1.8rem;
+cursor:pointer;
 }
 
 /* HERO */
 
 .hero{
 min-height:100vh;
+padding:130px 22px 80px;
 background:
-linear-gradient(rgba(91,33,182,.75),rgba(91,33,182,.75)),
-url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200');
-background-size:cover;
-background-position:center;
+radial-gradient(circle at top left,#ddd6fe 0,#f8f5ff 35%,#fff 100%);
 display:flex;
 align-items:center;
 justify-content:center;
-padding:40px 20px;
-text-align:center;
-color:white;
 }
 
-.hero-content{
-max-width:900px;
-animation:fade 1.5s ease;
+.hero-grid{
+max-width:1200px;
+display:grid;
+grid-template-columns:1.1fr .9fr;
+gap:60px;
+align-items:center;
 }
 
-.hero img{
-width:130px;
-margin:auto;
+.badge{
+display:inline-block;
+background:#ede9fe;
+color:#6d28d9;
+padding:10px 18px;
+border-radius:999px;
+font-weight:600;
 margin-bottom:25px;
-animation:float 3s ease-in-out infinite;
 }
 
 .hero h1{
-font-size:4rem;
-font-weight:700;
-margin-bottom:20px;
+font-size:4.2rem;
+line-height:1.1;
+color:#4c1d95;
+margin-bottom:25px;
 }
 
 .hero p{
-font-size:1.2rem;
-line-height:1.8;
-max-width:700px;
-margin:auto;
+font-size:1.15rem;
+line-height:1.9;
+color:#594a69;
+margin-bottom:35px;
 }
 
-.btn{
-display:inline-block;
-margin-top:35px;
-background:white;
-color:#6d28d9;
-padding:15px 35px;
+.hero-btns{
+display:flex;
+gap:18px;
+flex-wrap:wrap;
+}
+
+.btn-primary{
+background:#7c3aed;
+color:white;
+padding:15px 30px;
 border-radius:999px;
-font-weight:600;
 text-decoration:none;
+font-weight:700;
+box-shadow:0 10px 25px rgba(124,58,237,.3);
 transition:.3s;
 }
 
-.btn:hover{
-transform:scale(1.08);
+.btn-primary:hover{
+transform:translateY(-4px);
+background:#6d28d9;
+}
+
+.btn-secondary{
+background:white;
+color:#7c3aed;
+padding:15px 30px;
+border-radius:999px;
+text-decoration:none;
+font-weight:700;
+border:2px solid #ddd6fe;
+transition:.3s;
+}
+
+.btn-secondary:hover{
+transform:translateY(-4px);
+}
+
+.hero-card{
+background:white;
+padding:30px;
+border-radius:38px;
+box-shadow:0 20px 55px rgba(0,0,0,.10);
+animation:float 3.5s ease-in-out infinite;
+}
+
+.video-box{
+background:#f3f0ff;
+border-radius:28px;
+padding:20px;
+display:grid;
+gap:18px;
+}
+
+.person{
+display:flex;
+align-items:center;
+gap:15px;
+background:white;
+padding:18px;
+border-radius:24px;
+box-shadow:0 8px 20px rgba(0,0,0,.06);
+}
+
+.person img{
+width:65px;
+height:65px;
+border-radius:50%;
+}
+
+.status{
+font-size:.85rem;
+color:#10b981;
+font-weight:700;
 }
 
 /* SECTIONS */
 
-.section{
-padding:100px 20px;
+section{
+padding:95px 22px;
 }
 
-.title{
+.section-title{
 text-align:center;
-font-size:3rem;
-font-weight:700;
-margin-bottom:70px;
-color:#5b21b6;
+font-size:2.8rem;
+color:#4c1d95;
+margin-bottom:18px;
 }
 
-.cards{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:30px;
-max-width:1200px;
-margin:auto;
-}
-
-.card{
-background:white;
-padding:35px;
-border-radius:30px;
-box-shadow:0 10px 30px rgba(0,0,0,.08);
+.section-subtitle{
 text-align:center;
-transition:.4s;
-}
-
-.card:hover{
-transform:translateY(-10px);
-}
-
-.card img{
-width:90px;
-margin-bottom:20px;
-}
-
-.card h3{
-font-size:1.5rem;
-margin-bottom:15px;
-color:#6d28d9;
-}
-
-.card p{
+max-width:720px;
+margin:0 auto 60px;
+color:#685a78;
 line-height:1.8;
 }
 
-/* COMO FUNCIONA */
+/* SERVICES ACCORDION */
+
+.accordion{
+max-width:1000px;
+margin:auto;
+display:flex;
+flex-direction:column;
+gap:24px;
+}
+
+.service{
+background:white;
+border-radius:32px;
+box-shadow:0 14px 40px rgba(0,0,0,.08);
+overflow:hidden;
+transition:.3s;
+}
+
+.service.active{
+box-shadow:0 22px 55px rgba(124,58,237,.20);
+}
+
+.service-head{
+width:100%;
+border:none;
+background:white;
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:28px;
+cursor:pointer;
+text-align:left;
+}
+
+.service-left{
+display:flex;
+align-items:center;
+gap:20px;
+}
+
+.service-left img{
+width:70px;
+}
+
+.service h3{
+font-size:1.45rem;
+color:#5b21b6;
+}
+
+.service small{
+color:#6b5d7a;
+font-size:.92rem;
+}
+
+.price{
+background:#ede9fe;
+color:#6d28d9;
+font-weight:800;
+padding:10px 18px;
+border-radius:999px;
+white-space:nowrap;
+}
+
+.arrow{
+font-size:1.8rem;
+color:#6d28d9;
+transition:.3s;
+}
+
+.service.active .arrow{
+transform:rotate(180deg);
+}
+
+.service-body{
+max-height:0;
+overflow:hidden;
+transition:max-height .45s ease;
+background:#faf8ff;
+}
+
+.service-content{
+padding:0 32px 32px;
+line-height:1.8;
+color:#554760;
+}
+
+.info-tags{
+display:flex;
+gap:12px;
+flex-wrap:wrap;
+margin:20px 0;
+}
+
+.tag{
+background:white;
+border:1px solid #ddd6fe;
+padding:9px 15px;
+border-radius:999px;
+font-weight:600;
+color:#6d28d9;
+}
+
+.reserve{
+display:inline-block;
+margin-top:18px;
+background:#7c3aed;
+color:white;
+text-decoration:none;
+padding:13px 24px;
+border-radius:999px;
+font-weight:700;
+transition:.3s;
+}
+
+.reserve:hover{
+background:#6d28d9;
+transform:scale(1.04);
+}
+
+/* HOW */
+
+.how{
+background:#f0eaff;
+}
 
 .steps{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:30px;
 max-width:1100px;
 margin:auto;
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:28px;
 }
 
 .step{
-background:#ede9fe;
-padding:40px;
+background:white;
+padding:35px;
 border-radius:30px;
+box-shadow:0 12px 35px rgba(0,0,0,.07);
 text-align:center;
 }
 
-.step h2{
-font-size:4rem;
-margin-bottom:20px;
+.step-num{
+font-size:3rem;
+margin-bottom:15px;
 }
 
-/* AVISO */
+/* NOTICE */
 
 .notice{
-background:#fff1f2;
-max-width:1000px;
+max-width:980px;
 margin:auto;
-padding:40px;
-border-radius:25px;
+background:#fff1f2;
 border-left:8px solid #fb7185;
+border-radius:26px;
+padding:35px;
+line-height:1.9;
+box-shadow:0 12px 35px rgba(0,0,0,.06);
 }
 
 .notice h2{
 color:#e11d48;
-margin-bottom:20px;
-font-size:2rem;
+margin-bottom:18px;
 }
 
-.notice p{
-line-height:2;
+/* CONTACT */
+
+.contact-section{
+background:#f0eaff;
 }
 
-/* FORM */
-
-.form-box{
-background:white;
+.contact-box{
 max-width:850px;
 margin:auto;
-padding:50px;
-border-radius:30px;
-box-shadow:0 10px 30px rgba(0,0,0,.08);
+background:white;
+border-radius:34px;
+padding:42px;
+box-shadow:0 18px 45px rgba(0,0,0,.08);
+text-align:center;
 }
 
-.input{
-width:100%;
-padding:18px;
-margin-top:15px;
-border:none;
-border-radius:15px;
-background:#f3f0ff;
-outline:none;
-font-size:1rem;
+.contact-options{
+display:flex;
+justify-content:center;
+gap:18px;
+flex-wrap:wrap;
+margin-top:28px;
 }
 
-.submit{
-width:100%;
-padding:18px;
-margin-top:25px;
-border:none;
-background:#7c3aed;
+.whatsapp{
+background:#22c55e;
 color:white;
-font-size:1rem;
-font-weight:600;
-border-radius:15px;
-cursor:pointer;
+padding:14px 24px;
+border-radius:999px;
+text-decoration:none;
+font-weight:700;
 transition:.3s;
 }
 
-.submit:hover{
+.whatsapp:hover{
+transform:translateY(-4px);
+background:#16a34a;
+}
+
+.form-btn{
+background:#7c3aed;
+color:white;
+padding:14px 24px;
+border-radius:999px;
+text-decoration:none;
+font-weight:700;
+transition:.3s;
+}
+
+.form-btn:hover{
+transform:translateY(-4px);
 background:#6d28d9;
 }
 
-.contact{
-text-align:center;
-margin-top:35px;
-line-height:2;
-font-size:1.1rem;
+/* FAQ */
+
+.faq{
+max-width:900px;
+margin:auto;
+display:flex;
+flex-direction:column;
+gap:18px;
+}
+
+.faq-item{
+background:white;
+padding:24px;
+border-radius:24px;
+box-shadow:0 10px 30px rgba(0,0,0,.06);
+}
+
+.faq-item h3{
+color:#5b21b6;
+margin-bottom:10px;
 }
 
 /* FOOTER */
 
 footer{
-background:#4c1d95;
+background:#3b0764;
 color:white;
 text-align:center;
-padding:50px 20px;
+padding:45px 20px;
 }
 
 footer h2{
 font-size:2rem;
-margin-bottom:15px;
+margin-bottom:12px;
 }
 
-/* ANIMACIONES */
+/* FLOATING WHATSAPP */
+
+.float-wa{
+position:fixed;
+right:22px;
+bottom:22px;
+background:#22c55e;
+color:white;
+width:62px;
+height:62px;
+display:flex;
+align-items:center;
+justify-content:center;
+border-radius:50%;
+font-size:1.8rem;
+text-decoration:none;
+box-shadow:0 12px 30px rgba(0,0,0,.25);
+z-index:999;
+}
+
+/* ANIMATIONS */
+
+.fade{
+opacity:0;
+transform:translateY(35px);
+transition:.8s;
+}
+
+.fade.show{
+opacity:1;
+transform:translateY(0);
+}
 
 @keyframes float{
-0%{transform:translateY(0px);}
-50%{transform:translateY(-10px);}
-100%{transform:translateY(0px);}
+0%{transform:translateY(0);}
+50%{transform:translateY(-12px);}
+100%{transform:translateY(0);}
 }
 
-@keyframes fade{
-from{
-opacity:0;
-transform:translateY(40px);
-}
-to{
-opacity:1;
-transform:translateY(0px);
-}
-}
-
-/* RESPONSIVE */
+/* MOBILE */
 
 @media(max-width:900px){
+
+.nav-links{
+position:absolute;
+top:75px;
+right:20px;
+background:white;
+flex-direction:column;
+gap:15px;
+padding:22px;
+border-radius:22px;
+box-shadow:0 15px 35px rgba(0,0,0,.12);
+display:none;
+}
+
+.nav-links.show{
+display:flex;
+}
+
+.menu-btn{
+display:block;
+}
+
+.hero-grid{
+grid-template-columns:1fr;
+text-align:center;
+}
 
 .hero h1{
 font-size:2.8rem;
@@ -278,215 +557,379 @@ font-size:2.8rem;
 font-size:1rem;
 }
 
-.cards{
-grid-template-columns:1fr;
+hero-btns{
+justify-content:center;
+}
+
+.hero-btns{
+justify-content:center;
+}
+
+.service-head{
+align-items:flex-start;
+gap:15px;
+}
+
+.service-left{
+align-items:flex-start;
+}
+
+.service-left img{
+width:56px;
+}
+
+.price{
+font-size:.85rem;
+padding:8px 13px;
 }
 
 .steps{
 grid-template-columns:1fr;
 }
 
-.title{
-font-size:2.3rem;
+.section-title{
+font-size:2.2rem;
 }
 
-.form-box{
-padding:30px;
+.contact-box{
+padding:28px;
 }
 
 }
 
+@media(max-width:560px){
+
+.hero{
+padding-top:115px;
+}
+
+.hero h1{
+font-size:2.35rem;
+}
+
+.service-head{
+flex-direction:column;
+}
+
+.service-content{
+padding:0 24px 28px;
+}
+
+.contact-options{
+flex-direction:column;
+}
+
+.whatsapp,.form-btn{
+width:100%;
+}
+
+}
 </style>
-
 </head>
 
 <body>
 
-<!-- HERO -->
+<nav>
+  <div class="nav-box">
+    <div class="logo">
+      <img src="https://cdn-icons-png.flaticon.com/512/3771/3771417.png" alt="logo">
+      PsicoApoyo Joven
+    </div>
 
-<section class="hero">
+    <div class="menu-btn" onclick="toggleMenu()">☰</div>
 
-<div class="hero-content">
+    <div class="nav-links" id="navLinks">
+      <a href="#inicio">Inicio</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#funciona">Cómo funciona</a>
+      <a href="#aviso">Aviso</a>
+      <a href="#contacto">Contacto</a>
+    </div>
+  </div>
+</nav>
 
-<img src="https://cdn-icons-png.flaticon.com/512/3771/3771417.png">
+<header class="hero" id="inicio">
+  <div class="hero-grid">
 
-<h1>PsicoApoyo Joven</h1>
+    <div>
+      <span class="badge">Orientación psicoeducativa virtual</span>
 
-<p>
-Orientación psicoeducativa virtual para jóvenes y estudiantes. 
-Un espacio moderno, accesible y pensado para ayudarte en temas emocionales, vocacionales y académicos.
-</p>
+      <h1>Apoyo joven, cercano y accesible</h1>
 
-<a href="#servicios" class="btn">
-Explorar servicios
-</a>
+      <p>
+        PsicoApoyo Joven brinda orientación emocional, orientación vocacional y apoyo en creación de CV mediante sesiones virtuales pensadas para jóvenes y estudiantes.
+      </p>
 
-</div>
+      <div class="hero-btns">
+        <a href="#servicios" class="btn-primary">Ver servicios</a>
+        <a href="https://forms.gle/f2hyVVwRmHmpSvpR7" target="_blank" class="btn-secondary">Reservar ahora</a>
+      </div>
+    </div>
 
+    <div class="hero-card">
+      <div class="video-box">
+        <div class="person">
+          <img src="https://cdn-icons-png.flaticon.com/512/4140/4140047.png" alt="orientador">
+          <div>
+            <strong>Orientador</strong>
+            <p class="status">● En línea</p>
+          </div>
+        </div>
+
+        <div class="person">
+          <img src="https://cdn-icons-png.flaticon.com/512/4140/4140051.png" alt="cliente">
+          <div>
+            <strong>Estudiante</strong>
+            <p>Consulta sobre emociones, vocación o CV.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</header>
+
+<section id="servicios" class="fade">
+  <h2 class="section-title">Nuestros servicios</h2>
+  <p class="section-subtitle">
+    Selecciona un servicio para ver detalles, duración, precio y alcance de la orientación.
+  </p>
+
+  <div class="accordion">
+
+    <div class="service">
+      <button class="service-head" onclick="toggleService(this)">
+        <div class="service-left">
+          <img src="https://cdn-icons-png.flaticon.com/512/4140/4140048.png" alt="">
+          <div>
+            <h3>Orientación emocional</h3>
+            <small>Manejo de emociones y estrés cotidiano.</small>
+          </div>
+        </div>
+        <div class="price">S/15</div>
+        <div class="arrow">⌄</div>
+      </button>
+
+      <div class="service-body">
+        <div class="service-content">
+          <p><strong>¿De qué trata?</strong></p>
+          <p>
+            Es un espacio de orientación psicoeducativa enfocado en el manejo de emociones, organización personal y afrontamiento del estrés cotidiano.
+          </p>
+
+          <p>
+            Durante la sesión se pueden utilizar instrumentos psicométricos de tamizaje o escalas de autoevaluación con fines educativos y orientativos. Estos instrumentos no tienen fines diagnósticos ni sustituyen una evaluación psicológica profesional.
+          </p>
+
+          <div class="info-tags">
+            <span class="tag">⏱ 35 minutos</span>
+            <span class="tag">💰 S/15</span>
+            <span class="tag">💻 Virtual</span>
+          </div>
+
+          <a href="https://forms.gle/f2hyVVwRmHmpSvpR7" target="_blank" class="reserve">Reservar orientación</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="service">
+      <button class="service-head" onclick="toggleService(this)">
+        <div class="service-left">
+          <img src="https://cdn-icons-png.flaticon.com/512/3135/3135755.png" alt="">
+          <div>
+            <h3>Orientación vocacional</h3>
+            <small>Apoyo para decisiones académicas y profesionales.</small>
+          </div>
+        </div>
+        <div class="price">S/25</div>
+        <div class="arrow">⌄</div>
+      </button>
+
+      <div class="service-body">
+        <div class="service-content">
+          <p><strong>¿De qué trata?</strong></p>
+          <p>
+            Sesión orientada a identificar intereses, habilidades, fortalezas y preferencias académicas o profesionales para facilitar la toma de decisiones.
+          </p>
+
+          <p>
+            Se podrán utilizar inventarios vocacionales e instrumentos psicométricos de orientación con fines educativos. Los resultados son orientativos y no constituyen diagnóstico psicológico.
+          </p>
+
+          <div class="info-tags">
+            <span class="tag">⏱ 35 minutos</span>
+            <span class="tag">💰 S/25</span>
+            <span class="tag">🎯 Orientativo</span>
+          </div>
+
+          <a href="https://forms.gle/f2hyVVwRmHmpSvpR7" target="_blank" class="reserve">Reservar orientación</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="service">
+      <button class="service-head" onclick="toggleService(this)">
+        <div class="service-left">
+          <img src="https://cdn-icons-png.flaticon.com/512/942/942748.png" alt="">
+          <div>
+            <h3>Creación de CV y apoyo digital</h3>
+            <small>Mejora de CV, redacción y perfil profesional.</small>
+          </div>
+        </div>
+        <div class="price">S/20</div>
+        <div class="arrow">⌄</div>
+      </button>
+
+      <div class="service-body">
+        <div class="service-content">
+          <p><strong>¿De qué trata?</strong></p>
+          <p>
+            Asesoría personalizada para elaborar o mejorar el currículum vitae, optimizar el perfil profesional y organizar mejor la presentación laboral.
+          </p>
+
+          <p>
+            Se brinda apoyo con herramientas digitales e inteligencia artificial para mejorar la redacción, el diseño del CV, cartas de presentación, perfil de LinkedIn y preparación básica para entrevistas.
+          </p>
+
+          <div class="info-tags">
+            <span class="tag">⏱ 35 minutos</span>
+            <span class="tag">💰 S/20</span>
+            <span class="tag">📄 Digital</span>
+          </div>
+
+          <a href="https://forms.gle/f2hyVVwRmHmpSvpR7" target="_blank" class="reserve">Solicitar apoyo</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
 </section>
 
-<!-- SERVICIOS -->
+<section class="how fade" id="funciona">
+  <h2 class="section-title">¿Cómo funciona?</h2>
+  <p class="section-subtitle">
+    El proceso está pensado para ser simple, rápido y accesible desde cualquier dispositivo.
+  </p>
 
-<section class="section" id="servicios">
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1️⃣</div>
+      <h3>Elige el servicio</h3>
+      <p>Revisa las opciones y selecciona la orientación que necesitas.</p>
+    </div>
 
-<h2 class="title">
-Nuestros servicios
-</h2>
+    <div class="step">
+      <div class="step-num">2️⃣</div>
+      <h3>Completa el formulario</h3>
+      <p>Envía tus datos y una breve descripción de tu consulta.</p>
+    </div>
 
-<div class="cards">
-
-<div class="card">
-
-<img src="https://cdn-icons-png.flaticon.com/512/4140/4140048.png">
-
-<h3>Orientación emocional</h3>
-
-<p>
-Espacio de escucha y acompañamiento para el manejo de emociones, estrés académico y organización personal.
-</p>
-
-</div>
-
-<div class="card">
-
-<img src="https://cdn-icons-png.flaticon.com/512/3135/3135755.png">
-
-<h3>Orientación vocacional</h3>
-
-<p>
-Apoyo para descubrir intereses, habilidades y tomar decisiones sobre estudios y futuro profesional.
-</p>
-
-</div>
-
-<div class="card">
-
-<img src="https://cdn-icons-png.flaticon.com/512/942/942748.png">
-
-<h3>Creación de CV</h3>
-
-<p>
-Asesoría básica para mejorar currículums vitae y prepararse para oportunidades laborales.
-</p>
-
-</div>
-
-</div>
-
+    <div class="step">
+      <div class="step-num">3️⃣</div>
+      <h3>Coordina la sesión</h3>
+      <p>Nos comunicamos contigo para organizar la videollamada.</p>
+    </div>
+  </div>
 </section>
 
-<!-- COMO FUNCIONA -->
-
-<section class="section bg-purple-50">
-
-<h2 class="title">
-¿Cómo funciona?
-</h2>
-
-<div class="steps">
-
-<div class="step">
-
-<h2>1️⃣</h2>
-
-<p>
-Ingresa a nuestra página y revisa nuestros servicios disponibles.
-</p>
-
-</div>
-
-<div class="step">
-
-<h2>2️⃣</h2>
-
-<p>
-Completa el formulario con tus datos y tu consulta.
-</p>
-
-</div>
-
-<div class="step">
-
-<h2>3️⃣</h2>
-
-<p>
-Nos comunicaremos contigo para coordinar la orientación virtual.
-</p>
-
-</div>
-
-</div>
-
+<section id="aviso" class="fade">
+  <div class="notice">
+    <h2>⚠️ Aviso importante</h2>
+    <p>
+      PsicoApoyo Joven brinda orientación y acompañamiento psicoeducativo. Este servicio no constituye terapia psicológica, evaluación clínica, diagnóstico ni tratamiento psicológico profesional.
+    </p>
+    <p>
+      En caso de requerir atención especializada, se recomienda acudir a un psicólogo titulado, colegiado y habilitado, o a un centro de salud correspondiente.
+    </p>
+  </div>
 </section>
 
-<!-- AVISO -->
+<section class="fade">
+  <h2 class="section-title">Preguntas frecuentes</h2>
 
-<section class="section">
+  <div class="faq">
+    <div class="faq-item">
+      <h3>¿Es terapia psicológica?</h3>
+      <p>No. Es orientación psicoeducativa. No realizamos diagnóstico ni tratamiento psicológico.</p>
+    </div>
 
-<div class="notice">
+    <div class="faq-item">
+      <h3>¿Las sesiones son virtuales?</h3>
+      <p>Sí. Las sesiones se coordinan mediante videollamada.</p>
+    </div>
 
-<h2>
-Importante
-</h2>
-
-<p>
-PsicoApoyo Joven brinda orientación y acompañamiento psicoeducativo. 
-No realizamos terapia psicológica, diagnóstico clínico ni tratamiento profesional. 
-En situaciones que requieran atención especializada, se recomienda acudir a un psicólogo colegiado o centro de salud correspondiente.
-</p>
-
-</div>
-
+    <div class="faq-item">
+      <h3>¿Cuánto dura cada sesión?</h3>
+      <p>Cada servicio tiene una duración aproximada de 35 minutos.</p>
+    </div>
+  </div>
 </section>
 
-<!-- FORMULARIO -->
+<section class="contact-section fade" id="contacto">
+  <h2 class="section-title">Contáctanos</h2>
+  <p class="section-subtitle">
+    Puedes reservar mediante el formulario o escribirnos directamente por WhatsApp.
+  </p>
 
-<section class="section bg-purple-50">
+  <div class="contact-box">
+    <h3>Reserva tu orientación</h3>
+    <p>Completa el formulario para coordinar la sesión que necesitas.</p>
 
-<h2 class="title">
-Contáctanos
-</h2>
-
-<div class="form-box">
-
-<form action="https://forms.gle/f2hyVVwRmHmpSvpR7">
-
-<input type="text" placeholder="Tu nombre" class="input">
-
-<input type="email" placeholder="Tu correo" class="input">
-
-<textarea placeholder="Escribe tu mensaje" class="input" style="height:180px;"></textarea>
-
-<button class="submit">
-Enviar consulta
-</button>
-
-</form>
-
-<div class="contact">
-
-<p>📱 +51 990 042 500</p>
-<p>📱 +51 929 371 414</p>
-
-</div>
-
-</div>
-
+    <div class="contact-options">
+      <a href="https://forms.gle/f2hyVVwRmHmpSvpR7" target="_blank" class="form-btn">Formulario de reserva</a>
+      <a href="https://wa.me/51990042500?text=Hola%20quiero%20información%20sobre%20PsicoApoyo%20Joven" target="_blank" class="whatsapp">+51 990 042 500</a>
+      <a href="https://wa.me/51929371414?text=Hola%20quiero%20información%20sobre%20PsicoApoyo%20Joven" target="_blank" class="whatsapp">+51 929 371 414</a>
+    </div>
+  </div>
 </section>
-
-<!-- FOOTER -->
 
 <footer>
-
-<h2>
-PsicoApoyo Joven
-</h2>
-
-<p>
-Orientación accesible para jóvenes y estudiantes.
-</p>
-
+  <h2>PsicoApoyo Joven</h2>
+  <p>Orientación psicoeducativa accesible para jóvenes y estudiantes.</p>
 </footer>
 
+<a href="https://wa.me/51990042500?text=Hola%20quiero%20información%20sobre%20PsicoApoyo%20Joven" target="_blank" class="float-wa">💬</a>
+
+<script>
+function toggleMenu(){
+  document.getElementById("navLinks").classList.toggle("show");
+}
+
+function toggleService(button){
+  const service = button.parentElement;
+  const body = service.querySelector(".service-body");
+  const allServices = document.querySelectorAll(".service");
+
+  allServices.forEach(item => {
+    if(item !== service){
+      item.classList.remove("active");
+      item.querySelector(".service-body").style.maxHeight = null;
+    }
+  });
+
+  service.classList.toggle("active");
+
+  if(service.classList.contains("active")){
+    body.style.maxHeight = body.scrollHeight + "px";
+  }else{
+    body.style.maxHeight = null;
+  }
+}
+
+const fadeElements = document.querySelectorAll(".fade");
+
+function showOnScroll(){
+  fadeElements.forEach(el => {
+    const rect = el.getBoundingClientRect();
+    if(rect.top < window.innerHeight - 100){
+      el.classList.add("show");
+    }
+  });
+}
+
+window.addEventListener("scroll", showOnScroll);
+window.addEventListener("load", showOnScroll);
+</script>
+
 </body>
-</html>pp
+</html>
